@@ -1,0 +1,24 @@
+{% extends 'info/base.html' %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<div class="card mb-3">
+  <div class="card-header"><i class="fas fa-user"></i> <b>Student Profile</b></div>
+  <div class="card-body">
+    <table class="table table-bordered">
+      <tbody>
+        <tr><th style="width:30%">Name</th><td>{{ stud.name }}</td></tr>
+        <tr><th>Roll No</th><td>{{ stud.roll_no }}</td></tr>
+        <tr><th>Class</th><td>{{ stud.class_id }}</td></tr>
+        <tr><th>Department</th><td>{{ stud.class_id.dept.name }}</td></tr>
+        <tr><th>Semester</th><td>{{ stud.class_id.sem }}</td></tr>
+        <tr><th>Courses</th><td>{{ n_courses }}</td></tr>
+        <tr><th>Overall Attendance</th>
+          <td>{% if total %}{{ attended }} / {{ total }} classes &nbsp;
+              {% if overall < 75 %}<span class="badge badge-danger">{{ overall }}%</span>
+              {% else %}<span class="badge badge-success">{{ overall }}%</span>{% endif %}
+              {% else %}No classes recorded yet{% endif %}</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

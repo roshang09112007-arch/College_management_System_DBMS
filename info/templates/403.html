@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Access denied</title>
+{% load static %}
+<link href="{% static '/info/bootstrap/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+</head><body class="bg-dark"><div class="container"><div class="card mx-auto mt-5" style="max-width:32rem">
+<div class="card-header">Access denied (403)</div>
+<div class="card-body">
+  <p>You don't have permission to view this page. You can only open your own records.</p>
+  <a class="btn btn-primary" href="{% url 'index' %}">Back to home</a>
+</div></div></div></body></html>
